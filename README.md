@@ -1,3 +1,6 @@
+환경 설정 커맨드 <br>
+`pip install -r requirements.txt`
+
 # API reference
 
 ## Users
