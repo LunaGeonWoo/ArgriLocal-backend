@@ -22,4 +22,5 @@ class User(AbstractUser):
     name = models.CharField(
         max_length=150,
         default="",
+        verbose_name="이름",
     )

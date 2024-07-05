@@ -9,10 +9,8 @@ class Product(CommonModel):
         on_delete=models.CASCADE,
     )
     name = models.CharField(max_length=50)
-    imageUrl = models.URLField()
-    producer = models.CharField(max_length=50)
+    image_url = models.URLField()
     description = models.TextField()
-    location = models.TextField()
     price = models.PositiveIntegerField(validators=[MinValueValidator(1)])
 
     def __str__(self) -> str:

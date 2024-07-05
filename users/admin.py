@@ -11,6 +11,7 @@ class CustomUserAdmin(UserAdmin):
             ("Personal info"),
             {
                 "fields": (
+                    "name",
                     "email",
                     "address",
                 )
