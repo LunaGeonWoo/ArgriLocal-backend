@@ -1,4 +1,5 @@
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import exceptions, status
 from django.contrib.auth import login
@@ -21,6 +22,14 @@ class Users(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors)
+
+
+class Me(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = PrivateUserSerializer(request.user)
+        return Response(serializer.data)
 
 
 class UserName(APIView):
